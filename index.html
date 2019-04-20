@@ -2,26 +2,63 @@
 <html>
 <body>
 
-<audio id="myAudio">
-  <source src="assets/audio/oreooreo.mp3" type="audio/mpeg">
+<audio id="if_youre_gonna_go_then_go">
+  <source src="assets/audio/effects/if_youre_gonna_go_then_go.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio controls loop id="boy_problems">
+  <source src="assets/audio/karaoke/boy_problems.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio controls loop id="call_me_maybe">
+  <source src="assets/audio/karaoke/call_me_maybe.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio controls loop id="emotions">
+  <source src="assets/audio/karaoke/emotions.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio controls loop id="i_really_like_you">
+  <source src="assets/audio/karaoke/i_really_like_you.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio controls loop id="run_away_with_me">
+  <source src="assets/audio/karaoke/run_away_with_me.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <p>Click the buttons to play or pause the audio.</p>
 
-<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="playAudio('if_youre_gonna_go_then_go')" type="button">if_youre_gonna_go_then_go</button>
+<div></div>
 <button onclick="pauseAudio()" type="button">Pause Audio</button> 
+<div></div>
+<button onclick="playAudio('boy_problems')" type="button">boy_problems</button> 
+<button onclick="playAudio('call_me_maybe')" type="button">call_me_maybe</button> 
+<button onclick="playAudio('emotions')" type="button">emotions</button> 
+<button onclick="playAudio('i_really_like_you')" type="button">i_really_like_you</button> 
+<button onclick="playAudio('run_away_with_me')" type="button">run_away_with_me</button> 
 
+<!--<script src="scrits/create_buttons.js"></script>-->
 <script>
-var x = document.getElementById("myAudio"); 
+	const audios = document.querySelectorAll('audio');
 
-function playAudio() { 
-  x.play(); 
-} 
+	audios.forEach(a => {
+	  a.style.display="none";
+	});
 
-function pauseAudio() { 
-  x.pause(); 
-} 
+	function playAudio(clip) {
+	  pauseAudio();
+	  document.getElementById(clip).play();
+	}
+
+	function pauseAudio() { 
+	  audios.forEach(a => {
+	     a.pause();
+	  });
+	} 
+
 </script>
 
 </body>
